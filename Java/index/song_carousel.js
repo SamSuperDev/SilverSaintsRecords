@@ -3,22 +3,22 @@ const songs = [
     title: "Slow Down",
     artist: "$MoneyP",
     link: "https://soundcloud.com/moneyyp/slow-down?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing&si=ddc4aeecd9fa4adca74fb4edf597f6dd",
-    src: "../Music/Slow Down/final.wav",
-    img: "../Images/Main/slow down.png"
+    src: "/Music/Slow Down/final.wav",
+    img: "/Images/Main/slow down.png"
     },
     {
     title: "He",
     artist: "$MoneyP",
     link: "https://soundcloud.com/moneyyp/hes/s-o9wl6aYrYR0?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing&si=0f0c530b9fc44f9c87fdb3352492335b",
-    src: "../Music/He/He.wav",
-    img: "../Images/Main/he.png"
+    src: "/Music/He/He.wav",
+    img: "/Images/Main/he.png"
     },
     {
     title: "Real",
     artist: "$MoneyP",
     link: "https://soundcloud.com/moneyyp/real?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing&si=bfd87031167e4122a0939410acd1a644",
-    src: "../Music/Real/finalforreal.wav",
-    img: "../Images/Main/real.png"
+    src: "/Music/Real/finalforreal.wav",
+    img: "/Images/Main/real.png"
     }
 ];
 
@@ -108,4 +108,5 @@ function resetCarousel() {
 
         // Initialize
 updateUI();
+
 startCarousel();
