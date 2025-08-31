@@ -1,0 +1,71 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(17, 17, 17);
+    padding: 60px 20px; /* responsive padding */
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%; /* safer than 100vw */
+}
+
+.footer img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+/* Links stacked vertically */
+.footer .links {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* space between links on desktop */
+    flex-wrap: wrap; /* wrap if needed */
+    margin-bottom: 20px;
+}
+
+.footer .links a {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.5s;
+}
+
+.footer .links a:hover {
+    opacity: 0.7;
+}
+
+.footer .links a:active {
+    opacity: 0.5;
+}
+
+/* Text */
+.footer p {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #aaa;
+    margin-top: 10px;
+}
+
+/* Optional: smaller links on very small screens */
+@media (max-width: 480px) {
+    .footer img {
+        width: 100px;
+    }
+
+    .footer .links a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer .links {
+        flex-direction: column; /* stack links */
+        align-items: center;    /* center them */
+        gap: 15px;              /* vertical spacing */
+    }
+}

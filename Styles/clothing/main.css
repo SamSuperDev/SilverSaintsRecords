@@ -1,0 +1,129 @@
+body {
+    padding-top: clamp(20px, 6vw, 120px); /* min: 20px, max: 120px */
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Section Styling */
+.clothing-section {
+    padding: 8vw 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.clothing-section .section-title {
+    font-family: "metal mania";
+    font-size: clamp(2rem, 6vw, 75px);
+    margin: 0 0 8vw 0;
+}
+
+/* Responsive Grid */
+.clothing-section .clothing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Always 3 per row on large screens */
+    gap: 20px;
+}
+
+/* Clothing Item */
+.clothing-grid .clothing-item {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(17, 17, 17);
+    position: relative; /* Needed for absolute positioning inside */
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.clothing-grid .clothing-item .out-of-stock {
+    position: absolute;
+    top: 10px;  /* Space from the top */
+    left: 10px; /* Space from the left */
+    background-color: rgba(255, 0, 0, 0.85); /* Red with transparency */
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+/* Image Container with Front & Back Images */
+.clothing-grid .clothing-item .image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    display: block;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    padding: 50px 30px;
+}
+
+/* The back image starts hidden */
+.image-container img.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+/* Hover Effect: Show back image, hide front */
+.image-container:hover img.front {
+    opacity: 0;
+}
+
+.image-container:hover img.back {
+    opacity: 1;
+}
+
+/* Info Section */
+.clothing-grid .clothing-item .clothing-info {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+}
+
+.clothing-info .name {
+    font-size: clamp(0.9rem, 2vw, 14px);
+    margin: 0;
+}
+
+.clothing-info .price {
+    font-size: clamp(0.8rem, 2vw, 13px);
+    margin-top: 10px;
+}
+
+/* Responsive Padding & Grid Changes */
+@media (max-width: 1024px) {
+    .clothing-section {
+        padding: 10vw 5vw;
+    }
+    .clothing-section .clothing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .clothing-section {
+        padding-top: 12vw;
+    }
+    .clothing-section .clothing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .clothing-section {
+        padding-top: 15vw;
+    }
+}

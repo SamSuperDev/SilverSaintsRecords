@@ -1,0 +1,196 @@
+body {
+    padding-top: clamp(20px, 6vw, 120px); /* min: 20px, max: 120px */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Records Section ===== */
+.records-section {
+    padding: 8vw 5vw; /* Responsive padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.records-section .section-title {
+    font-family: "metal mania";
+    font-size: clamp(2rem, 6vw, 75px); /* Scales with screen size */
+    margin: 0 0 8vw 0;
+}
+
+/* Grid that adjusts automatically */
+.records-section .records-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible columns */
+    gap: 20px;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.records-grid .song-div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Image container */
+.records-grid .song-div .image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Keeps square shape */
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+/* Image styles */
+.records-grid .song-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.5s;
+}
+
+.records-grid .song-div .image-container:hover img {
+    opacity: 0.5;
+    transform: scale(1.1);
+}
+
+/* Button overlay */
+.records-grid .song-div button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 18px;
+    border: 0.1rem solid white;
+    text-align: center;
+    border-radius: 5rem;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.5s, opacity 0.5s;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.records-grid .song-div:hover button {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.records-grid .song-div button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.records-grid .song-div button:active {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Album info */
+.records-grid .song-div .album-info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+}
+
+.album-info .album-title {
+    font-size: clamp(18px, 2vw, 25px);
+    font-family: "metal mania";
+    cursor: pointer;
+    transition: opacity 0.5s;
+    margin: 0 0 3px;
+}
+
+.album-info .artist-name {
+    font-size: clamp(14px, 1.5vw, 16px);
+    font-weight: 500;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+/* ===== Artist Section ===== */
+.artist-section {
+    padding: 6vw 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8vw;
+}
+
+.artist-section .section-title {
+    font-family: "metal mania";
+    font-size: clamp(2rem, 6vw, 75px);
+    margin-bottom: 8vw;
+}
+
+/* Artist grid */
+.artist-section .artist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.artist-grid .artist-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.artist-grid img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background-color: grey;
+    transition: opacity 0.5s;
+    box-shadow: 0px 0px 16px rgba(255, 255, 255, 0.3);
+}
+
+.artist-grid img:hover {
+    opacity: 0.5;
+}
+
+.artist-grid a {
+    font-size: clamp(14px, 1.5vw, 18px);
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.5s;
+}
+
+/* ===== Media Queries for Extra Control ===== */
+@media (max-width: 1024px) {
+    .records-section {
+        padding: 8vw 3vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .records-section .records-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    body {
+        padding-top: 50px; /* More padding for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .records-section .records-grid {
+        grid-template-columns: 1fr;
+    }
+    .artist-section .artist-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    body {
+        padding-top: 60px; /* Extra padding for small phones */
+    }
+}
